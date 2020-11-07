@@ -4,7 +4,7 @@
 
 <p>Imagens: </p>
 
-<img src="public/images/desktop_2.png">
 <img src="public/images/desktop_pokemon.png">
+<img src="public/images/desktop_2.png">
 <img src="public/images/mobile_pokemon.png">
 
