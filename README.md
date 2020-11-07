@@ -2,6 +2,8 @@
 
 <p>Feito em ReactJS</p>
 
+<p>Fonte de dados: https://pokemontcg.io/</p>
+
 <p>Imagens: </p>
 
 <img src="public/images/desktop_pokemon.png">
