@@ -1,0 +1,12 @@
+$background-default: rgb(214, 98, 98);
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+}
+body{
+    background: $background-default;
+}
