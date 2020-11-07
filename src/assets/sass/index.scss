@@ -86,15 +86,17 @@ body{
 
     box-shadow: 7px 3px 11px 1px rgba(0,0,0,0.9);
 
-    .image:hover img{
-       transform: scale(1.5);
-       transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
-
+    .image{
         margin-right: 50px;
 
         @media (max-width: 640px){
             margin: 0;
         }
+    }
+
+    .image:hover img{
+       transform: scale(1.5);
+       transition: all .8s cubic-bezier(.190, 1.000, .220, 1.000);
     }
 
     .attacks{
