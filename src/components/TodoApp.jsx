@@ -1,59 +1,53 @@
 import React from 'react';
-import Requisicao from '../config/requisicao';
+import Attacks from './Attacks';
 
-class Attacks extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        if(this.props.atks === undefined){
-            return <p>Não possui ataque</p>
-        }else{
-            console.log(this.props.atks)
+const pokemon = require('pokemontcgsdk');
 
-            return (
-                <ul>
-                    {
-                        this.props.atks.forEach( (item,index) =>{
-                            <li key={index}>
-                                <h1>Ataques</h1>
-                                {item.name}
-                            </li>
-                        })
-                    }
-                </ul>
-            );  
-        }
-    }
-}
-
-class Cards extends React.Component{
+export default class Cards extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
           error: null,
           isLoaded: false,
-          cards: []
+          cards: [],
+          inputValue: '',
+          qtd: 10,
+          text: 'Carregar mais'
         };
-        this.base_url = 'https://api.pokemontcg.io/v1/cards';
       }
-    
+      handleQtdPage = () => {
+          this.setState({
+              qtd: this.state.qtd + 10,
+          })
+          this.componentDidMount();
+      }
+
+      handleChangeInput = (e) => {
+        e.preventDefault();
+        this.setState({
+            inputValue: e.target.value
+        });
+      }
+
       componentDidMount() {
-        Requisicao(this.base_url)
-          .then(
-            (result) => {
-              this.setState({
+        pokemon.card.where({pageSize: this.state.qtd}).then(cards => {
+            this.setState({
                 isLoaded: true,
-                cards: result.cards
-              });
-            },
-            (error) => {
-              this.setState({
+                cards: cards,
+                text: 'Carregar mais'
+            });    
+        })
+      }
+
+      handleSubmit = (e) => {
+          e.preventDefault();
+          pokemon.card.where({name: this.state.inputValue}).then(cards => {
+            this.setState({
                 isLoaded: true,
-                error
-              });
-            }
-          )
+                cards: cards,
+                text: 'Voltar para página anterior',
+            });
+          });
       }
     
       render() {
@@ -63,43 +57,41 @@ class Cards extends React.Component{
             return <div>Carregando...</div>   
         }else{
             return (
-                <div>
+                <div className="container-cards">
+                    <form onSubmit={this.handleSubmit}>
+                        <input onChange={this.handleChangeInput} value={this.state.inputValue} type="text"/>
+                        <input className="button" type="submit" value="Pesquisar pokemon"/>
+                    </form>
                   {this.state.cards.map((item,index) => (
-                    <div key={index}>
-                        <p>id: {item.id}</p>
-                        <p>Nome: {item.name}</p>
-                        <p>Id nacional na pokedex: {item.nationalPokedexNumber}</p>
-                        <img src={item.imageUrl} />
-                        <p>Tipo: {item.types}</p>
-                        <p>Super tipo: {item.supertype}</p>
-                        <p>Sub tipo: {item.subtype}</p>
-                        <p>Forma evoluida: {item.evolvesFrom}</p>
-                        <p>Vida: {item.hp}</p>
-                        <p>Número: {item.number}</p>
-                        <p>Raridade: {item.rarity}</p>
-                        <p>Serie: {item.series}</p>
-                        <p>Set: {item.set}</p>
-                        <p>Set Code: {item.setCode}</p>
-                        <div className="attacks">
-                            <Attacks atks={item.attacks}/>
+                    <div key={index} className="card">
+                        <div className="image">
+                            <img src={item.imageUrl} />
+                        </div>
+
+                        <div className="informacoes">
+                            <p>id: {item.id}</p>
+                            <p>Nome: {item.name}</p>
+                            <p>Id nacional na pokedex: {item.nationalPokedexNumber}</p>
+                            <p>Tipo: {item.types}</p>
+                            <p>Super tipo: {item.supertype}</p>
+                            <p>Sub tipo: {item.subtype}</p>
+                            <p>Forma evoluida: {item.evolvesFrom}</p>
+                            <p>Vida: {item.hp}</p>
+                            <p>Número: {item.number}</p>
+                            <p>Raridade: {item.rarity}</p>
+                            <p>Serie: {item.series}</p>
+                            <p>Set: {item.set}</p>
+                            <p>Set Code: {item.setCode}</p>
+                            <div className="attacks">
+                                <Attacks atks={item.attacks}/>
+                            </div>
                         </div>
                     </div>
                   ))}
+                  <button onClick={this.handleQtdPage} className="button">{this.state.text}</button>
                 </div>
             );
         }
       }
 }
 
-export default class TodoApp extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        return(
-            <div>
-                <Cards /> 
-            </div>
-        );
-    }
-}
