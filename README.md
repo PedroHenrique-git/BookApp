@@ -1,12 +1,25 @@
-<h1>App para consultar dados sobre cartas de pokemon</h1>
+# Find pokemon cards
 
-<p>Feito em ReactJS</p>
+App to query data about pokemon cards
 
-<p>Fonte de dados: https://pokemontcg.io/</p>
+## Getting Started
 
-<p>Imagens: </p>
+install dependencies: <b>npm run install</b> 
+
+start project: <b>npm run start</b>
+
+## Built With
+
+* [ReactJs](https://pt-br.reactjs.org/) 
+
+## Images
 
 <img src="public/images/desktop.png">
 <img src="public/images/desktop_2.png">
 <img src="public/images/mobile_pokemon.png">
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
 
