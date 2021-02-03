@@ -4,7 +4,7 @@ App to query data about pokemon cards
 
 ## Getting Started
 
-install dependencies: <b>npm run install</b> 
+install dependencies: <b>npm install</b> 
 
 start project: <b>npm run start</b>
 
