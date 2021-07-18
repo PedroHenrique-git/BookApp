@@ -16,7 +16,7 @@ export default function CardPage(): JSX.Element {
             <BackgroundContainer />
             <div className="title">
                 <Link to="/">Go to home</Link>
-                <h1>{id}</h1>
+                <h1>{pokemonData.data.name}</h1>
             </div>
             <section className="card_conteudo">
                 <div className="card_image">

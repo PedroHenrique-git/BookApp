@@ -2,6 +2,20 @@ export interface IPokemon {
     pokemonData: {
         data: Array<{
             id: string;
+            images: {
+                small: string;
+            };
+        }>;
+        totalCount: number;
+    };
+    isLoading: boolean;
+    isError: any;
+}
+
+export interface IPokemonCard {
+    pokemonData: {
+        data: {
+            id: string;
             name: string;
             supertype: string;
             subtypes: Array<string>;
@@ -20,23 +34,10 @@ export interface IPokemon {
                 value: string;
             }>;
             images: {
-                small: string;
-            };
-        }>;
-        totalCount: number;
-    };
-    isLoading: boolean;
-    isError: any;
-}
-
-export interface IPokemonCard {
-    pokemonData: {
-        data: {
-            id: string;
-            images: {
                 large: string;
             };
         };
+        totalCount: number;
     };
     isLoading: boolean;
     isError: any;
