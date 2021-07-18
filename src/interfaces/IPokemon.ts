@@ -37,7 +37,6 @@ export interface IPokemonCard {
                 large: string;
             };
         };
-        totalCount: number;
     };
     isLoading: boolean;
     isError: any;

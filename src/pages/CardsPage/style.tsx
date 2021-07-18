@@ -18,6 +18,10 @@ export const CardWrap = styled.main`
         align-items: center;
         justify-content: center;
 
+        @media (max-width: 640px) {
+            flex-direction: column;
+        }
+
         a {
             margin-right: 20px;
             border-radius: 5px;
@@ -29,12 +33,17 @@ export const CardWrap = styled.main`
             padding: 5px;
             font-size: 1.2em;
             text-decoration: none;
+
+            @media (max-width: 640px) {
+                margin-right: 0px;
+            }
         }
 
         h1 {
             color: ${colors.color1};
             font-size: 2.6em;
             font-weight: 100;
+            text-align: center;
         }
     }
 

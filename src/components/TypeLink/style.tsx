@@ -10,6 +10,11 @@ export const TypeCard = styled.div<typeString>`
     height: 200px;
     width: 200px;
 
+    @media (max-width: 640px) {
+        height: 100px;
+        width: 100px;
+    }
+
     &:hover:after {
         background: rgba(0, 0, 0, 0.8);
         border-radius: 5px;

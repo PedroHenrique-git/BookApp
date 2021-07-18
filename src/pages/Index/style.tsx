@@ -11,15 +11,8 @@ export const MainContainer = styled.main`
     align-items: center;
     justify-content: center;
 
-    &::after {
-        background: rgba(0, 0, 0, 0.6);
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        z-index: -1;
+    @media (max-width: 640px) {
+        margin: 20px auto 0 auto;
     }
 
     .conteudo {
@@ -34,6 +27,7 @@ export const MainContainer = styled.main`
                 color: ${colors.color1};
                 font-size: 2.1em;
                 font-weight: 100;
+                text-align: center;
             }
         }
 
@@ -42,6 +36,38 @@ export const MainContainer = styled.main`
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
+        }
+
+        form {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            input {
+                color: ${colors.color3};
+                padding: 10px;
+                border-radius: 10px;
+                border: none;
+                outline: none;
+                font-size: 1.4em;
+                margin-right: 15px;
+
+                @media (max-width: 640px) {
+                    width: 200px;
+                }
+            }
+
+            button {
+                border-radius: 5px;
+                background: ${colors.color2};
+                border: none;
+                color: ${colors.color3};
+                outline: none;
+                cursor: pointer;
+                padding: 10px;
+                font-size: 1.4em;
+            }
         }
     }
 `;

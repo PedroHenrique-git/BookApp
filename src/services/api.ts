@@ -12,12 +12,21 @@ const fetcher = (url: string, apiKey: string): Promise<any> =>
         }),
     }).then((resp) => resp.json());
 
-export function getCardsData(page: number, type: string): IPokemon {
+export function getCardsData(
+    page: number,
+    type?: string,
+    name?: string
+): IPokemon {
+    let url = '';
+
+    if (name) {
+        url = `${baseUrl}/cards?q=name:${name}&page=${page}&pageSize=${pokemonPerPage}`;
+    } else {
+        url = `${baseUrl}/cards?q=types:${type}&page=${page}&pageSize=${pokemonPerPage}`;
+    }
+
     const { data: pokemonData, error } = useSWR(
-        [
-            `${baseUrl}/cards?q=types:${type}&page=${page}&pageSize=${pokemonPerPage}`,
-            process.env.REACT_APP_API_KEY,
-        ],
+        [url, process.env.REACT_APP_API_KEY],
         fetcher
     );
 
