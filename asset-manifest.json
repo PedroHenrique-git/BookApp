@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.js": "/pokemon-deck/static/js/main.541e291b.chunk.js",
+    "main.js.map": "/pokemon-deck/static/js/main.541e291b.chunk.js.map",
+    "runtime-main.js": "/pokemon-deck/static/js/runtime-main.ee7f5536.js",
+    "runtime-main.js.map": "/pokemon-deck/static/js/runtime-main.ee7f5536.js.map",
+    "static/js/2.fb80569b.chunk.js": "/pokemon-deck/static/js/2.fb80569b.chunk.js",
+    "static/js/2.fb80569b.chunk.js.map": "/pokemon-deck/static/js/2.fb80569b.chunk.js.map",
+    "index.html": "/pokemon-deck/index.html",
+    "static/js/2.fb80569b.chunk.js.LICENSE.txt": "/pokemon-deck/static/js/2.fb80569b.chunk.js.LICENSE.txt",
+    "static/media/background.55e74a7f.jpg": "/pokemon-deck/static/media/background.55e74a7f.jpg",
+    "static/media/darkness.e139e037.svg": "/pokemon-deck/static/media/darkness.e139e037.svg",
+    "static/media/dragon.50f986be.svg": "/pokemon-deck/static/media/dragon.50f986be.svg",
+    "static/media/fairy.8b663435.svg": "/pokemon-deck/static/media/fairy.8b663435.svg",
+    "static/media/fighting.8ec17be2.svg": "/pokemon-deck/static/media/fighting.8ec17be2.svg",
+    "static/media/fire.b81b69f3.svg": "/pokemon-deck/static/media/fire.b81b69f3.svg",
+    "static/media/grass.bdc5b553.svg": "/pokemon-deck/static/media/grass.bdc5b553.svg",
+    "static/media/lightning.5b9316bb.svg": "/pokemon-deck/static/media/lightning.5b9316bb.svg",
+    "static/media/loading.e834de00.gif": "/pokemon-deck/static/media/loading.e834de00.gif",
+    "static/media/metal.08f9721f.svg": "/pokemon-deck/static/media/metal.08f9721f.svg",
+    "static/media/normal.461bd737.svg": "/pokemon-deck/static/media/normal.461bd737.svg",
+    "static/media/psychic.1ff2b9e2.svg": "/pokemon-deck/static/media/psychic.1ff2b9e2.svg",
+    "static/media/water.2e85de33.svg": "/pokemon-deck/static/media/water.2e85de33.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ee7f5536.js",
+    "static/js/2.fb80569b.chunk.js",
+    "static/js/main.541e291b.chunk.js"
+  ]
+}
