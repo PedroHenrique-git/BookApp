@@ -1,5 +1,12 @@
-import Index from './pages/Index/Index';
+import { HashRouter } from 'react-router-dom';
+import { GlobalStyles } from './style/GlobalStyles';
+import Routes from './routes/Routes';
 
 export default function App(): JSX.Element {
-    return <Index />;
+    return (
+        <HashRouter>
+            <GlobalStyles />
+            <Routes />
+        </HashRouter>
+    );
 }

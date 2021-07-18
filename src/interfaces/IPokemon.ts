@@ -1,8 +1,41 @@
 export interface IPokemon {
     pokemonData: {
-        id: string;
-        images: {
-            large: string;
+        data: Array<{
+            id: string;
+            name: string;
+            supertype: string;
+            subtypes: Array<string>;
+            hp: string;
+            types: Array<string>;
+            evolvesTo: Array<string>;
+            attacks: Array<{
+                name: string;
+                cost: Array<string>;
+                convertedEnergyCost: number;
+                damage: string;
+                text: string;
+            }>;
+            weaknesses: Array<{
+                type: string;
+                value: string;
+            }>;
+            images: {
+                small: string;
+            };
+        }>;
+        totalCount: number;
+    };
+    isLoading: boolean;
+    isError: any;
+}
+
+export interface IPokemonCard {
+    pokemonData: {
+        data: {
+            id: string;
+            images: {
+                large: string;
+            };
         };
     };
     isLoading: boolean;
